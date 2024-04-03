@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="Login.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form action="ADM/PHP/processar_login.php" method="POST">
+
+            <label for="username">RA:</label>
+            <input type="text" id="RA" name="RA" required>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+            <input type="hidden" name="tipo_acesso" readonly value="0" hidden>
+
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+</body>
+
+</html>

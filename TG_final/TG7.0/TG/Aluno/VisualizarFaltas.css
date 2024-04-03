@@ -1,0 +1,174 @@
+/* Estilização geral da página */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    width: auto;
+    padding: 10px 2rem 5px 2rem;
+    background-color: #080688;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header p, header button {
+    margin: 0;
+    
+    color: white;
+}
+
+h1 {
+    margin: 0;
+    
+    color: white;
+}
+
+
+/* Estilização da tabela */
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+table th,
+table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #080688;
+    color: white;
+}
+
+
+/* Estilização das linhas alternadas da tabela */
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+/* Estilização do botão */
+
+button {
+    margin: 20px 20px;
+    background-color: #080688;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #100446;
+}
+
+
+/* Estilização dos links de edição */
+
+a {
+    text-decoration: none;
+    color: rgb(14, 10, 228);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos adicionais conforme necessário para o modal */
+#chartModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    z-index: 1000;
+    height: 23rem;
+    width: 20rem;
+    border: 2px solid #000;
+    border-radius: 20px;
+    background-color: #c4c4c4;
+}
+#grafico {
+    height: 17rem;
+    width: 17rem;
+    margin: auto;
+}
+#fecharModal {
+    width: 100%;
+    margin: auto;
+    margin-top: 0;
+}
+
+.TelaADM-List_Aluno {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    height: 25rem;
+    width: 35rem;
+    border-radius: 20px;
+    overflow: hidden;
+    overflow-y: scroll;
+
+    /* Para navegadores baseados em WebKit (Chrome, Safari, etc.) */
+    scrollbar-width: thin;  /* para Firefox */
+    scrollbar-color: #ccc #fff;  /* para Firefox */
+
+    /* Para navegadores baseados em WebKit (Chrome, Safari, etc.) */
+    &::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #ccc;  /* Cor da alça da barra de rolagem */
+        border-radius: 6px;     /* Cantos arredondados da alça da barra de rolagem */
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #fff;  /* Cor do trilho da barra de rolagem */
+        border-radius: 8px;     /* Cantos arredondados do trilho da barra de rolagem */
+    }
+}
+
+.TelaADM-List_Aluno table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.TelaADM-List_Aluno th, .TelaADM-List_Aluno td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+#Total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

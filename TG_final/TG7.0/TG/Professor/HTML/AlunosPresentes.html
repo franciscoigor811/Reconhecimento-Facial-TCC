@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Presença dos Alunos</title>
+    <link rel="stylesheet" href="../CSS/AlunosPresentes.css">
+    <style>
+        /* Estilos para a div que contém os elementos de filtro */
+        
+        .filter-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Tabela de Presença dos Alunos</h1>
+        <div>
+            <p><?php echo $logindata["RA"];?></p>
+            <a href="../../MenuLogin.html"><button type="button">Sair</button></a> 
+        </div>
+    </header>
+    <main>
+        <div class="filter-container">
+            <div>
+                <label for="dataSelecionada">Selecione a data:</label>
+                <input type="date" id="dataSelecionada" onchange="verificarDiaSemana()">
+            </div>
+            <div>
+                <label for="materiaSelecionada">Selecione a matéria:</label>
+                <select id="materiaSelecionada">
+                    <option value="">Todas as Matérias</option>
+                    <option value="Matemática">Matemática</option>
+                    <option value="Português">Português</option>
+                    <!-- Adicione mais opções conforme necessário -->
+                </select>
+            </div>
+            <button type="button" onclick="filtrarListaPresenca()">Filtrar</button>
+        </div>
+        <div>
+            <a href="../MenuProfessor.php"><button type="button">Voltar</button></a>
+        </div>
+
+        <table id="tabelaPresenca" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Nome do Aluno</th>
+                    <th>Data</th>
+                    <th>Hora de Entrada</th>
+                    <th>Hora de Saída</th>
+                    <th>Matéria</th>
+                    <th>Presente</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>João Silva</td>
+                    <td>2023-10-10</td>
+                    <td>08:30</td>
+                    <td>16:45</td>
+                    <td>Matemática</td>
+                    <td>Não</td>
+                </tr>
+                <tr>
+                    <td>Maria Santos</td>
+                    <td>2023-10-10</td>
+                    <td>09:15</td>
+                    <td>17:20</td>
+                    <td>Português</td>
+                    <td>Sim</td>
+                </tr>
+                <tr>
+                    <td>Carlos Oliveira</td>
+                    <td>2023-10-10</td>
+                    <td>08:50</td>
+                    <td>16:30</td>
+                    <td>Matemática</td>
+                    <td>Não</td>
+                </tr>
+                <!-- Adicione mais linhas conforme necessário -->
+            </tbody>
+        </table>
+    </main>
+
+    <script>
+        function verificarDiaSemana() {
+            const dataSelecionada = new Date(document.getElementById("dataSelecionada").value);
+            const diaSemanaSelecionado = dataSelecionada.getDay(); // 0 para Domingo, 1 para Segunda, 2 para Terça, etc.
+
+            // Dia da semana desejado (por exemplo, quirta-feira, 3)
+            const diaSemanaDesejado = 5;
+
+            if (diaSemanaSelecionado !== diaSemanaDesejado) {
+                alert("Selecione uma data que seja uma quirta-feira.");
+                document.getElementById("dataSelecionada").value = ""; // Limpa o campo de data
+            }
+        }
+
+        function filtrarListaPresenca() {
+            const dataSelecionada = document.getElementById("dataSelecionada").value;
+            const materiaSelecionada = document.getElementById("materiaSelecionada").value;
+            const tabelaPresenca = document.getElementById("tabelaPresenca");
+            const linhasTabela = tabelaPresenca.querySelectorAll("tbody tr");
+
+            linhasTabela.forEach((linha) => {
+                const dataLinha = linha.querySelector("td:nth-child(2)").textContent;
+                const materiaLinha = linha.querySelector("td:nth-child(5)").textContent;
+
+                const dataCorrespondente = dataLinha === dataSelecionada || dataSelecionada === "";
+                const materiaCorrespondente = materiaLinha === materiaSelecionada || materiaSelecionada === "";
+
+                if (dataCorrespondente && materiaCorrespondente) {
+                    linha.style.display = ""; // Mostrar a linha se a data e a matéria coincidirem
+                } else {
+                    linha.style.display = "none"; // Ocultar a linha se a data ou a matéria não coincidirem
+                }
+            });
+
+            // Exibir ou ocultar a tabela inteira com base nas linhas visíveis
+            tabelaPresenca.style.display = linhasTabela.length > 0 ? "" : "none";
+        }
+    </script>
+</body>
+
+</html>

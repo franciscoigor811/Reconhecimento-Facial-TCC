@@ -1,0 +1,80 @@
+/* TelaADM-Menu.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #616161;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    width: auto;
+    padding: 10px 2rem 5px 2rem;
+    background-color: #080688;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header p, header button {
+    margin: 0;
+    
+    color: white;
+}
+
+h1 {
+    margin: 0;
+    
+    color: white;
+}
+
+.table-container {
+    height: 250px;
+    max-width: 50%;
+    margin: 5rem auto;
+    padding: 20px;
+    background-color: #616161;
+    text-align: center;
+    /* Alinha o conteúdo no centro */
+}
+
+table {
+    height: 100%;
+    width: 100%;
+    /* Ajusta a largura para 100% */
+}
+
+tr {
+    margin-bottom: 1rem;
+}
+
+.menu-button {
+    background-color: #080688;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.menu-button:hover {
+    background-color: #100446;
+}
+button {
+    background-color: #080688;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #100446;
+}

@@ -1,0 +1,117 @@
+/* Estilização geral do formulário */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #616161;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    width: 96%;
+    padding: 10px 2rem 5px 2rem;
+    background-color: #080688;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header p, header button {
+    margin: 0;
+    
+    color: white;
+}
+
+h1 {
+    margin: 0;
+    
+    color: white;
+}
+
+main {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+
+/* Estilização das etiquetas */
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+
+/* Estilização dos campos de entrada de texto e caixa de texto */
+
+input[type="datetime-local"],
+input[type="text"],
+textarea, 
+select {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+
+/* Estilização do botão de envio */
+
+button {
+    background-color: #080688;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #100446;
+}
+
+
+/* Estilização do textarea com barra de rolagem personalizada */
+
+textarea {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    /* Tornar a barra de rolagem mais fina e com uma cor de fundo */
+    scrollbar-width: thin;
+    /* Para navegadores Firefox */
+    scrollbar-color: #080688 #ccc;
+    /* Cor da barra e do fundo */
+}
+
+
+/* Estilização para navegadores Webkit (Chrome, Safari, etc.) */
+
+textarea::-webkit-scrollbar {
+    width: 6px;
+    /* Largura da barra de rolagem */
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background-color: #080688;
+    /* Cor da barra de rolagem */
+    border-radius: 4px;
+    /* Cantos arredondados */
+}
+
+textarea::-webkit-scrollbar-track {
+    background-color: #ccc;
+    /* Cor de fundo da barra de rolagem */
+}
